@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>濮院封面</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<style>
+			body,html{
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+			.full-screen{
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			.full-screen img{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: auto;
+				height: 100%;
+				min-height: 100%;
+				transform: translate(-50%, -50%);
+				object-fit: cover;
+				z-index: -1;
+			}
+			.fade-in {
+			    animation: fadeIn 2s ease-in-out forwards;
+			    opacity: 0;
+				
+			}
+			@keyframes fadeIn {
+				to {
+			        opacity: 1;
+			    }
+			}
+			.clickable-area {
+			    position: absolute;
+				width: 100%;
+				height: 100vh;
+				z-index: 1; 
+				pointer-events: auto; 
+			}
+			.clickable-area[map-coords] {
+				cursor: pointer; 
+			}
+		    
+		</style>
+	</head>
+		
+	<body>
+		<div class="full-screen">
+			<img src="img/fengmian1.png">
+			<img src="img/fengmian2.png" class="fade-in" >
+			<img id="fengmian3" src="img/fengmian3.png" style="left: 100%; opacity: 0;">
+			<img src="img/button.png" usemap="#image-map" alt="tuan">
+		</div>
+		<div class="clickable-area" style="width: 50px; height:50px;top: 850px;left: 350px;" map-coords="2000,1500,2200,1700" onclick="location.href='';"></div>
+		<div class="clickable-area" style="width: 50px; height:50px;top: 850px;left: 680px;" map-coords="2000,1500,2200,1700" onclick="location.href='https://meaning-l.github.io/introduct/';"></div>
+		<div class="clickable-area" style="width: 50px; height:50px;top: 850px;left: 970px;" map-coords="2000,1500,2200,1700" onclick="location.href='https://cjjqy.github.io/exx2/';"></div>
+		<div class="clickable-area" style="width: 50px; height:50px;top: 850px;left: 1260px;" map-coords="2000,1500,2200,1700" onclick="location.href='https://www.4399.com/';"></div>
+		<map name="image-map">
+			<area shape="rect" coords="2000,1500,2200,1700" alt="Clickable Area" />
+		</map>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		    <script type="text/javascript">
+		        $(document).ready(function() {
+		            $('#fengmian3').animate({
+		                left: '50%',
+		                opacity: 1
+		            }, 2000, function() {
+		            });
+		    });
+		    </script>
+		    
+		
+	</body>
+</html>
